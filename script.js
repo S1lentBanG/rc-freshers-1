@@ -11,7 +11,6 @@ let functionDescriptions = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Shuffle the function descriptions and correct answers
     function shuffle(array1, array2) {
         for (let i = array1.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -26,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageCount = 8;
 
     for (let i = 1; i <= imageCount; i++) {
-        imageBlocks.innerHTML += `
-        <div class="grid-container">
+        imageBlocks.innerHTML += 
+        `<div class="grid-container">
             <div class="nomenclature">${String.fromCharCode(64 + i)}</div>
             <div class="image">
                 <img src="images/a${i}.jpg" alt="Image ${i}" class="img-fluid rounded">
@@ -59,7 +58,6 @@ function checkAnswers() {
         resultElement.style.color = 'green';
         resultElement.style.fontWeight = 'bold';
         
-        // Show the alert box
         alertBox.style.display = 'block';
     } else {
         resultElement.textContent = 'Some answers are incorrect. Please try again.';
@@ -72,5 +70,3 @@ function closeAlert() {
     const alertBox = document.getElementById('alertBox');
     alertBox.style.display = 'none';
 }
-
-
