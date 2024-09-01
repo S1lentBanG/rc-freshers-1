@@ -1,4 +1,7 @@
+// Array of correct answers corresponding to each image
 let correctAnswers = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+// Function descriptions to be matched with the images
 let functionDescriptions = [
     "Rotates to a precise angle for positioning tasks.",
     "Manages motor power and direction based on control inputs.",
@@ -10,16 +13,17 @@ let functionDescriptions = [
     "Creates and edits precise 2D/3D design models for engineering and architecture."
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Shuffle the function descriptions and correct answers
-    function shuffle(array1, array2) {
-        for (let i = array1.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array1[i], array1[j]] = [array1[j], array1[i]];
-            [array2[i], array2[j]] = [array2[j], array2[i]];
-        }
+// Shuffle function to randomize the order of descriptions and answers
+function shuffle(array1, array2) {
+    for (let i = array1.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array1[i], array1[j]] = [array1[j], array1[i]];
+        [array2[i], array2[j]] = [array2[j], array2[i]];
     }
+}
 
+// Initialize the game on page load
+document.addEventListener('DOMContentLoaded', () => {
     shuffle(functionDescriptions, correctAnswers);
 
     const imageBlocks = document.getElementById('imageBlocks');
@@ -40,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Check the answers when the user submits the form
 function checkAnswers() {
     const userInputs = document.querySelectorAll('input[type="text"]');
     let isCorrect = true;
@@ -68,9 +73,8 @@ function checkAnswers() {
     }
 }
 
+// Close the alert box
 function closeAlert() {
     const alertBox = document.getElementById('alertBox');
     alertBox.style.display = 'none';
 }
-
-
