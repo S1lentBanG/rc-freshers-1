@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match the Following</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="background-container">
+        <div class="container py-5 form-container bg-dark">
+            
+            <h1 class="text-center mb-4" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(224, 224, 224);">
+                <img src="./icons/rc-logo.png" alt="Logo" style="height: 50px;transform: translateY(-4px) translateX(-5px)"> Match the Pictures with Their Functions
+            </h1>
+            
+            <!-- Ensure alert box is outside of dynamically populated content -->
+            <div id="alertBox" class="alert-box" style="display: none;">
+                <div class="alert-content">
+                    <p>Congratulations for getting all the answers correct. Your Next Riddle is :</p>
+                    <button class="btn btn-success" onclick="closeAlert()">Close</button>
+                </div>
+            </div>
+
+            <!-- Background image for the image blocks container -->
+            <div id="imageBlocks" style="background-image: url(./images/cir-bg.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            </div>
+
+            <form id="matchForm">
+                <!-- Image blocks populated here -->
+                <div id="dynamicContent"></div>
+                <button type="button" class="btn btn-primary w-100 mt-4" onclick="checkAnswers()">Submit</button>
+            </form>
+            <p id="result" class="mt-4 text-center"></p>
+            
+        </div>
+    </div>
+</body>
+</html>
