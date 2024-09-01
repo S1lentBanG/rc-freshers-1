@@ -127,4 +127,38 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index
+    z-index: 10; /* Adjusted for proper stacking */
+}
+
+.alert-box.active {
+    display: block;
+}
+
+.alert-box h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #343a40;
+}
+
+.alert-box p {
+    font-size: 1rem;
+    margin: 0 0 20px 0;
+    color: #343a40;
+}
+
+.alert-box button {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.alert-box button:hover {
+    background-color: #495057;
+}
+
+.alert-box button:focus {
+    outline: none;
+}
