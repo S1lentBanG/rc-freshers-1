@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="grid-container">
             <div class="nomenclature">${String.fromCharCode(64 + i)}</div>
             <div class="image">
-                <img src="./images/a${i}.jpg" alt="Image ${i}" class="img-fluid rounded">
+                <img src="images/a${i}.jpg" alt="Image ${i}" class="img-fluid rounded">
             </div>
             <div class="textbox">
                 <input type="text" class="form-control text-center" maxlength="1">
