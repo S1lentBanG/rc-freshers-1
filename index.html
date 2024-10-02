@@ -22,7 +22,7 @@
             <!-- Ensure alert box is outside of dynamically populated content -->
             <div id="alertBox" class="alert-box" style="display: none;">
                 <div class="alert-content">
-                    <p>Congratulations for getting all the answers correct. Your Next Riddle is : Opposite the haven where a distinguished name rests,I offer cool comfort for financial quests.In a place where fiscal ease and service align.</p>
+                    <p>Congratulations for getting all the answers correct. Your Next Riddle is : <b>Opposite the haven where a distinguished name rests,I offer cool comfort for financial quests.In a place where fiscal ease and service align.</b></p>
                     <button class="btn btn-success" onclick="closeAlert()">Close</button>
                 </div>
             </div>
@@ -38,6 +38,8 @@
             </form>
             <p id="result" class="mt-4 text-center"></p>
             
+            <!-- Add the audio element for the MP3 file -->
+            <audio id="congoSound" src="congo.mp3"></audio>
         </div>
     </div>
 
@@ -103,6 +105,7 @@
 
             const resultElement = document.getElementById('result');
             const alertBox = document.getElementById('alertBox');
+            const congoSound = document.getElementById('congoSound');
 
             if (isCorrect) {
                 resultElement.textContent = 'Congratulations! All answers are correct.';
@@ -111,6 +114,9 @@
                 
                 // Show the alert box
                 alertBox.style.display = 'block';
+
+                // Play the congratulations sound
+                congoSound.play();
             } else {
                 resultElement.textContent = 'Some answers are incorrect. Please try again.';
                 resultElement.style.color = 'red';
